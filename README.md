@@ -31,12 +31,8 @@
     - The ros node expects to reach the robot at the IP and port`192.168.3.11:3920`  
     - This is set in igus_rebel/igus_rebel/src/IgusRebel.cpp  
 2. Build the docker environment as below  
-
-### Docker environment
 ```bash
-sudo apt install byobu
-git clone git@github.com:Osaka-University-Harada-Laboratory/rebel_tutorials.git --depth 1 && cd rebel_tutorials
-COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose build --no-cache --parallel  
+sudo apt install byobu && git clone git@github.com:Osaka-University-Harada-Laboratory/rebel_tutorials.git --depth 1 && cd rebel_tutorials && COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose build --no-cache --parallel  
 ```
 
 ## Usage with docker
@@ -59,14 +55,33 @@ xhost + && docker exec -it rebel_container bash -it -c "roslaunch rebel_tutorial
 ```
 2. Execute a below command
 - The Joint Velocity Controller commands a desired velocity to the joint.
-##### 0.2 [rad/s]
-```bash
-xhost + && docker exec -it rebel_container bash -it -c "rostopic pub /joint_velocity_controller/command std_msgs/Float64MultiArray '{layout: {dim: [], data_offset: 0}, data: [0.2, 0.2, 0.2, 0.2, 0.2, 0.2]}'"
-```
-##### 0.0 [rad/s]
-```bash
-xhost + && docker exec -it rebel_container bash -it -c "rostopic pub /joint_velocity_controller/command std_msgs/Float64MultiArray '{layout: {dim: [], data_offset: 0}, data: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}'"
-```
+  - ##### 0.2 [rad/s]
+    ```bash
+    xhost + && docker exec -it rebel_container bash -it -c "rostopic pub /joint_velocity_controller/command std_msgs/Float64MultiArray '{layout: {dim: [], data_offset: 0}, data: [0.2, 0.2, 0.2, 0.2, 0.2, 0.2]}'"
+    ```
+  - ##### 0.0 [rad/s]
+    ```bash
+    xhost + && docker exec -it rebel_container bash -it -c "rostopic pub /joint_velocity_controller/command std_msgs/Float64MultiArray '{layout: {dim: [], data_offset: 0}, data: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}'"
+    ```
+
+### Manually execute commands
+
+1. Build and run the docker environment
+- Create and start docker containers in the initially opened terminal
+  ```bash
+  docker compose up
+  ```
+- Execute the container in another terminal
+  ```bash
+  xhost + && docker exec -it rebel_container bash
+  ```
+
+2. Run a demonstration in the container  
+    ```bash
+    byobu
+    ```
+    - First command & F2 to create a new window & Second command ...
+    - Ctrl + F6 to close the selected window
 
 ## Author / Contributor
 
