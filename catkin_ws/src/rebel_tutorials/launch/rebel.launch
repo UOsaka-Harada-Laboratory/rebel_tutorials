@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+
+  <rosparam command="load" file="$(find igus_rebel)/config/controller.yaml" />
+
+  <node name="igus_rebel" pkg="igus_rebel" type="igus_rebel_node" output="screen"/>
+  <!--node name="controller" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="spawn joint_state_controller rebel_arm_controller" /-->
+  <node name="controller" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="spawn joint_state_controller joint_velocity_controller" />
+
+  <!-- robot model -->
+  <include file="$(find igus_rebel_description)/launch/igus_rebel_robot.launch"> </include> 
+  
+  <!-- Joint Controller -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" output="screen"> 
+    <rosparam param="source_list"> ["/joint_states"] </rosparam>
+    <param name="use_gui" value="false"/>
+  </node> 
+  
+  <!-- TF Controller-->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  
+</launch>
