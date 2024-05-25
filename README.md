@@ -9,11 +9,15 @@
 
 ## Dependencies
 
-### Docker build environment
+### Docker build environments (tested)
 
 - [Ubuntu 20.04 PC](https://ubuntu.com/certified/laptops?q=&limit=20&vendor=Dell&vendor=Lenovo&vendor=HP&release=20.04+LTS)
   - Docker 20.10.22
   - Docker Compose 2.4.1
+
+- [Ubuntu 22.04 PC](https://ubuntu.com/certified/laptops?q=&limit=20&vendor=Dell&vendor=Lenovo&vendor=HP&release=22.04+LTS)
+  - Docker 26.1.1
+  - Docker Compose 2.27.0
 
 ### ReBel
 
@@ -25,7 +29,7 @@
 
 ## Installation
 
-1. Connect an ethernet cable between the host computer and the ethernet port of ReBel
+1. Connect an Ethernet cable between the host computer and the Ethernet port of ReBel
 2. Set the network configuration as below  
     <img src=image/network.png width=280>  
     - The ros node expects to reach the robot at the IP and port`192.168.3.11:3920`  
