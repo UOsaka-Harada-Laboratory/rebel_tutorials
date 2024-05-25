@@ -49,15 +49,13 @@ sudo apt install byobu && git clone git@github.com:Osaka-University-Harada-Labor
   docker compose up
   ```
 
-2. Run a demonstration in the local machine
-  - Execute something below
-
 ### Real robot
-1. Connect to the robot  
+
+2. Connect to the robot  
 ```bash
 xhost + && docker exec -it rebel_container bash -it -c "roslaunch rebel_tutorials rebel.launch"
 ```
-2. Execute a below command
+3. Run a command on the host machine
 - The Joint Velocity Controller commands a desired velocity to the joint.
   - ##### 0.2 [rad/s]
     ```bash
