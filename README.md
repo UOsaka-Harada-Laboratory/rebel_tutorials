@@ -2,7 +2,7 @@
 
 [![support level: community](https://img.shields.io/badge/support%20level-community-lightgray.svg)](http://rosindustrial.org/news/2016/10/7/better-supporting-a-growing-ros-industrial-software-platform)
 [![License: BSD](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-![repo size](https://img.shields.io/github/repo-size/Osaka-University-Harada-Laboratory/rebel_tutorials)
+![repo size](https://img.shields.io/github/repo-size/UOsaka-Harada-Laboratory/rebel_tutorials)
 
 - ROS package for igus ReBel tutorial.
 - Docker for simulation and control environments for igus ReBel.
@@ -16,8 +16,8 @@
   - Docker Compose 2.4.1
 
 - [Ubuntu 22.04 PC](https://ubuntu.com/certified/laptops?q=&limit=20&vendor=Dell&vendor=Lenovo&vendor=HP&release=22.04+LTS)
-  - Docker 26.1.1
-  - Docker Compose 2.27.0
+  - Docker 27.4.1
+  - Docker Compose 2.32.1
 
 ### ReBel
 
@@ -36,7 +36,7 @@
     - This is set in igus_rebel/igus_rebel/src/IgusRebel.cpp  
 2. Build the docker environment as below  
 ```bash
-sudo apt install byobu && git clone git@github.com:Osaka-University-Harada-Laboratory/rebel_tutorials.git --depth 1 && cd rebel_tutorials && COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose build --no-cache --parallel  
+sudo apt install byobu && git clone git@github.com:UOsaka-Harada-Laboratory/rebel_tutorials.git --depth 1 && cd rebel_tutorials && COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose build --no-cache --parallel  
 ```
 
 ## Usage with docker
